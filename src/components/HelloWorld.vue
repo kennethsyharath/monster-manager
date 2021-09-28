@@ -11,7 +11,7 @@
       </v-col>
 
       <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">Welcome to Vuetify</h1>
+        <h1 class="display-2 font-weight-bold mb-3">{{msg}}</h1>
 
         <p class="subheading font-weight-regular">
           For help and collaboration with other Vuetify developers,
@@ -74,13 +74,12 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { Component, Prop, Vue } from "vue-property-decorator";
 
-export default Vue.extend({
-  name: "HelloWorld",
-
-  data: () => ({
-    ecosystem: [
+@Component
+export default class HelloWorld extends Vue {
+  @Prop() msg!:string;
+  ecosystem:Array<any> = [
       {
         text: "vuetify-loader",
         href: "https://github.com/vuetifyjs/vuetify-loader",
@@ -93,8 +92,8 @@ export default Vue.extend({
         text: "awesome-vuetify",
         href: "https://github.com/vuetifyjs/awesome-vuetify",
       },
-    ],
-    importantLinks: [
+    ]
+    importantLinks:Array<any> = [
       {
         text: "Documentation",
         href: "https://vuetifyjs.com",
@@ -115,8 +114,8 @@ export default Vue.extend({
         text: "Articles",
         href: "https://medium.com/vuetify",
       },
-    ],
-    whatsNext: [
+    ]
+    whatsNext:Array<any>= [
       {
         text: "Explore components",
         href: "https://vuetifyjs.com/components/api-explorer",
@@ -129,7 +128,6 @@ export default Vue.extend({
         text: "Frequently Asked Questions",
         href: "https://vuetifyjs.com/getting-started/frequently-asked-questions",
       },
-    ],
-  }),
-});
+    ]
+}
 </script>

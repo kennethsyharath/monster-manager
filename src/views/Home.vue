@@ -1,16 +1,18 @@
 <template>
-  <hello-world />
+  <div>
+    <hello-world msg="<3 Welcome to Vuetify Yo!!! <3"/>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { Component, Vue} from "vue-property-decorator"
 import HelloWorld from "../components/HelloWorld.vue";
+import store from "@/store/index";
 
-export default Vue.extend({
-  name: "Home",
-
+@Component({
   components: {
     HelloWorld,
   },
-});
+})
+export default class Home extends Vue {}
 </script>
